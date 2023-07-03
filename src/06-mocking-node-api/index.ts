@@ -5,8 +5,6 @@ import { join } from 'path';
 export const readFileAsynchronously = async (pathToFile: string) => {
   const fullPath = join(__dirname, pathToFile);
 
-  console.log(fullPath);
-
   if (existsSync(fullPath)) {
     const fileContent = await readFile(fullPath);
     return fileContent.toString();

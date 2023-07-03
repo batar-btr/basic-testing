@@ -66,7 +66,7 @@ describe('readFileAsynchronously', () => {
 
     jest.spyOn(path, 'join').mockReturnValue(finalPath);
 
-    readFileAsynchronously(pathToFile);
+    await readFileAsynchronously(pathToFile);
 
     expect(path.join).toHaveBeenCalledWith(__dirname, pathToFile);
     jest.restoreAllMocks();
@@ -80,7 +80,7 @@ describe('readFileAsynchronously', () => {
 
   test('should return file content if file exists', async () => {
     jest.resetModules();
-    console.log(path.join(__dirname, 'index.ts'));
+
     const file = await readFile(path.join(__dirname, 'index.ts'));
 
     const fileFromFunc = await readFileAsynchronously('index.ts');

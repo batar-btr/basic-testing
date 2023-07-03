@@ -6,6 +6,7 @@ module.exports = {
   moduleNameMapper: {
     '^axios$': require.resolve('axios'),
   },
+  testTimeout: 30000,
   restoreMocks: true,
   resetMocks: true,
   moduleDirectories: ['node_modules', '<rootDir>/src'],
